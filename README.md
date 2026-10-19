@@ -5,7 +5,7 @@ Build image transform URLs for [Small Pics](https://www.smallpics.io) in JavaScr
 ## Installation
 
 ```sh
-npm install smallpics-js
+npm install @smallpics/smallpics-js
 ```
 
 ## Quick Start
@@ -13,7 +13,7 @@ npm install smallpics-js
 Create an `Options` instance, configure the transform, then pass it with the image path to a `UrlBuilder`.
 
 ```js
-import { Options, UrlBuilder } from 'smallpics-js';
+import { Options, UrlBuilder } from '@smallpics/smallpics-js';
 
 const options = new Options();
 options.setWidth(800).setHeight(600).setFit('crop').setQuality(80);
@@ -31,8 +31,8 @@ The image path may include leading or trailing slashes; they are normalized when
 Pass the generated URL and your Small Pics signing secret to `signUrl()` in server code. The signature is calculated from the normalized URL and added as `s`.
 
 ```js
-import { Options, UrlBuilder } from 'smallpics-js';
-import { signUrl } from 'smallpics-js/server';
+import { Options, UrlBuilder } from '@smallpics/smallpics-js';
+import { signUrl } from '@smallpics/smallpics-js/server';
 
 const options = new Options({
 	width: 800,
@@ -55,7 +55,7 @@ Do not commit signing secrets. Load them from your application's environment or 
 `Options` is a fluent value object that serializes to Small Pics query parameters through `UrlBuilder`.
 
 ```js
-import { Options, UrlBuilder } from 'smallpics-js';
+import { Options, UrlBuilder } from '@smallpics/smallpics-js';
 
 const options = new Options()
 	.setWidth(800)
@@ -74,7 +74,7 @@ console.log(builder.buildUrl('bird.jpg', options));
 The constructor accepts setter names in camelCase and short query keys such as `w`, `fp`, and `markpad`.
 
 ```js
-import { Options, UrlBuilder } from 'smallpics-js';
+import { Options, UrlBuilder } from '@smallpics/smallpics-js';
 
 const options = new Options({
 	width: 800,
@@ -105,7 +105,7 @@ Boolean raw parameters are serialized as `1` or `0`.
 Options with a fixed set of values use strings.
 
 ```js
-import { Options } from 'smallpics-js';
+import { Options } from '@smallpics/smallpics-js';
 
 const options = new Options()
 	.setFit('crop')

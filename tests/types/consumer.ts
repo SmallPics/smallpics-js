@@ -1,5 +1,9 @@
-import { UrlBuilder, Options, type TransformOptions } from 'smallpics-js';
-import { signUrl } from 'smallpics-js/server';
+import {
+	UrlBuilder,
+	Options,
+	type TransformOptions,
+} from '@smallpics/smallpics-js';
+import { signUrl } from '@smallpics/smallpics-js/server';
 
 const options: TransformOptions = {
 	width: 800,
@@ -30,7 +34,7 @@ void fluent;
 // @ts-expect-error Watermark widths must be numeric or relative strings.
 new Options().setWatermarkWidth(false);
 
-const trim: import('smallpics-js').TrimMode = 'either';
+const trim: import('@smallpics/smallpics-js').TrimMode = 'either';
 new Options()
 	.setTrim(trim)
 	.setTrimColor('fff')

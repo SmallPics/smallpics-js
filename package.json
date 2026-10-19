@@ -1,9 +1,12 @@
 {
-	"name": "smallpics-js",
-	"version": "0.0.0",
+	"name": "@smallpics/smallpics-js",
+	"version": "0.1.0",
 	"description": "Small Pics URL generation for JavaScript",
 	"type": "module",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/SmallPics/smallpics-js.git"

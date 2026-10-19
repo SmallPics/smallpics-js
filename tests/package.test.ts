@@ -31,7 +31,7 @@ test('works from ordinary JavaScript ES modules and CommonJS', () => {
 		[
 			'--input-type=module',
 			'-e',
-			"import {UrlBuilder} from 'smallpics-js'; console.log(new UrlBuilder('https://media.smallpics.io').buildUrl('bird.jpg',{w:400}));",
+			"import {UrlBuilder} from '@smallpics/smallpics-js'; console.log(new UrlBuilder('https://media.smallpics.io').buildUrl('bird.jpg',{w:400}));",
 		],
 		{ cwd, encoding: 'utf8' },
 	);
@@ -41,7 +41,7 @@ test('works from ordinary JavaScript ES modules and CommonJS', () => {
 		[
 			'--input-type=commonjs',
 			'-e',
-			"const {UrlBuilder}=require('smallpics-js'); console.log(new UrlBuilder('https://media.smallpics.io').buildUrl('bird.jpg',{w:400}));",
+			"const {UrlBuilder}=require('@smallpics/smallpics-js'); console.log(new UrlBuilder('https://media.smallpics.io').buildUrl('bird.jpg',{w:400}));",
 		],
 		{ cwd, encoding: 'utf8' },
 	);
@@ -59,7 +59,7 @@ test('does not expose the signing entry under browser resolution', () => {
 				'--conditions=browser',
 				'--input-type=module',
 				'-e',
-				"import 'smallpics-js/server'",
+				"import '@smallpics/smallpics-js/server'",
 			],
 			{ cwd: fileURLToPath(new URL('../', import.meta.url)), stdio: 'pipe' },
 		),
